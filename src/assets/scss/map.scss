@@ -1,9 +1,15 @@
+@mixin coordinates($right, $top){
+  right: $right;
+  top:  $top;
+}
+
 .map{
   width: 100%;
   background: #FFFFFF;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
   & ul {
     display: flex;
+
     & li {
       list-style-type: none;
       margin-right: 30px;
@@ -13,19 +19,9 @@
       font-size: 18px;
       line-height: 20px;
       position: relative;
-      &:hover{
-        color: #A30C33;
-        cursor: pointer;
-        &::after{
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -28px;
-          width: 100%;
-          height: 3px;
-          background-color: #A30C33;
-        }
-      }
+      padding: 30px 0;
+      cursor: pointer;
+      border-bottom: 3px solid white;
       &:last-child{
         margin-right: 0;
       }
@@ -33,23 +29,24 @@
   }
 }
 
+
 .map__nav{
   display: flex;
   width: calc(100% - 11.2%);
-  margin: 0 auto;
+  margin: 0 auto 90px;
 }
 
 .map__nav_wrapper{
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 28px 0;
 }
 
 .map__nav_wrapper_left{
   position: relative;
   & h3{
     display: inline-block;
+    padding: 28px 0;
   }
   & img {
     position: absolute;
@@ -57,5 +54,65 @@
     right: -32px;
     top: 50%;
     transform: translate(0, -50%);
+  }
+}
+
+.map__earth {
+  max-width: calc(100% - 30px);
+  margin: 0 auto;
+  position: relative;
+}
+.map__earth_item{
+    position: absolute;
+  &.d-vostok{
+    @include coordinates(0, 0)
+  }
+  &.siberia{
+    @include coordinates(351px, 50.63px)
+  }
+  &.ural{
+    @include coordinates(636.6px, 98.5px)
+  }
+  &.nord_west{
+    @include coordinates(666.6px, 17px)
+  }
+  &.volga{
+    @include coordinates(886.5px, 230px)
+  }
+  &.center{
+    @include coordinates(988px, 174px)
+  }
+  &.south{
+    @include coordinates(1025px, 291px)
+  }
+}
+.d-vostok_point{
+    display: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #444444;
+    position: absolute;
+    & span{
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50% 0);
+      font-family: 'Proxima Nova Condensed', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 100%;
+      text-align: right;
+      color: #444444;
+  }
+    &.vladivostok{
+      @include coordinates(210px, 574px)
+    }
+  &.khabarovsk{
+    @include coordinates(197px, 498px);
+    & span{
+      top: -20px;
+    }
   }
 }
