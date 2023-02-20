@@ -1,0 +1,202 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6,ul,li{
+  padding: 0;
+  margin: 0;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../fonts/ProximaNovaCond-Semibold.woff2"),
+  url("../fonts/ProximaNovaCond-Semibold.woff");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@mixin after(){
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  white-space: nowrap;
+}
+
+.container{
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.header__logo{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 5.6%;
+}
+
+.header__logo_item{
+  display: flex;
+  align-items: center;
+  & h3{
+    margin-right: 20px;
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #444444;
+    white-space: nowrap;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+.header__background{
+  position: relative;
+  & img{
+    width: 100%;
+  }
+  & h1 {
+    max-width: 709px;
+    position: absolute;
+    left: 70px;
+    top: 26.16%;
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 100%;
+    color: #444444;
+  }
+  & a{
+    text-decoration: none;
+    position: absolute;
+    left: 70px;
+    top: 63.909%;
+    padding: 18px 28px;
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: #B01736;
+    border-radius: 8px;
+    border: none;
+    &:hover{
+      background: #D53152;
+    }
+  }
+}
+
+.header__softline{
+  max-width: 1110px;
+  padding: 99px 110px;
+  margin: 100px auto;
+  background: #FFFFFF;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.08);
+  font-family: 'Proxima Nova Condensed', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 38px;
+  text-align: center;
+  color: #444444;
+  & span{
+    color: #B01736;
+  }
+}
+
+.header__about {
+  max-width: 890px;
+  margin: 0 auto 100px;
+}
+
+.header__about_item{
+  margin-bottom: 111px;
+  width: 100%;
+  display: flex;
+  margin-right: 185px;
+  position: relative;
+  &.one{
+    justify-content: space-between;
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    color: #444444;
+  }
+  &.two{
+
+  }
+}
+
+.one.first{
+  padding-left: 39px;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: url(../images/header_about_before.svg);
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  &::after{
+    content: 'на IT-рынке';
+    @include after;
+  }
+}
+
+.one.second{
+  position: relative;
+  &::after{
+    content: 'сотрудников в России';
+    @include after;
+  }
+}
+
+.one.third{
+  position: relative;
+  &::after{
+    content: 'городов России';
+    @include after;
+  }
+}
+
+.two.first{
+  position: relative;
+  margin-left: 147px;
+  &::before{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: calc(100% + 10px);
+    content: url(../images/header_about_after.svg);
+  }
+  &::after{
+    content: 'разработчиков';
+    @include after;
+  }
+}
+
+.two.second{
+  margin-left: 244px;
+  position: relative;
+  width: 210px;
+  &::before{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: calc(100% - 35px);
+    content: url(../images/header_about_after.svg);
+  }
+  &::after{
+    content: "сотрудников ежегодно проходят оценку и обучение";
+    @include after;
+    white-space: normal;
+    bottom: -40px;
+  }
+}
+
