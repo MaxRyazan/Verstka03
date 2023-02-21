@@ -2,11 +2,11 @@
   right: $right;
   top:  $top;
 }
-
+li {
+  cursor: pointer !important;
+}
 .map{
   width: 100%;
-  background: #FFFFFF;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
   & ul {
     display: flex;
 
@@ -16,7 +16,7 @@
       font-family: 'Proxima Nova Condensed', sans-serif;
       font-style: normal;
       font-weight: 600;
-      font-size: 18px;
+      font-size: 16px;
       line-height: 20px;
       position: relative;
       padding: 30px 0;
@@ -32,8 +32,11 @@
 
 .map__nav{
   display: flex;
-  width: calc(100% - 11.2%);
+  width: 100%;
+  padding: 0 70px;
   margin: 0 auto 90px;
+  background: #FFFFFF;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
 }
 
 .map__nav_wrapper{
@@ -58,12 +61,12 @@
 }
 
 .menu_shadow{
-  opacity: 0.1;
+  opacity: 0.3;
   animation: .5s linear hide;
 }
 
 .menu_shadow_remove{
-  opacity: 1;
+  opacity: 3;
   animation: .5s linear remove_shadow;
 }
 
@@ -73,6 +76,9 @@
   margin: 0 auto;
   position: relative;
 }
+.hide{
+  display: none;
+}
 
 .map__earth_item{
     position: absolute;
@@ -80,22 +86,22 @@
     @include coordinates(0, 0)
   }
   &.siberia{
-    @include coordinates(351px, 50.63px)
+    @include coordinates(350.7px, 50.63px)
   }
   &.ural{
     @include coordinates(636.6px, 98.5px)
   }
   &.nord_west{
-    @include coordinates(666.6px, 17px)
+    @include coordinates(666.6px, 17.3px)
   }
   &.volga{
-    @include coordinates(886.5px, 230px)
+    @include coordinates(885.7px, 230px)
   }
   &.center{
-    @include coordinates(988px, 174px)
+    @include coordinates(987.7px, 174px)
   }
   &.south{
-    @include coordinates(1025px, 291px)
+    @include coordinates(1024.7px, 291px)
   }
 }
 
@@ -294,21 +300,52 @@
   0%{
     opacity: 1;
   }
-  50%{
-    opacity: .5;
-  }
   100%{
-    opacity: 0.1;
+    opacity: .3;
   }
 }
 @keyframes remove_shadow {
   0%{
-    opacity: .1;
-  }
-  50%{
-    opacity: .5;
+    opacity: .3;
   }
   100%{
     opacity: 1;
   }
+}
+
+
+.map__list {
+  position: absolute;
+  padding: 30px 68.5px;
+  max-width: 1250px;
+  background: #FFFFFF;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.06);
+  display: flex;
+  margin-top: 103px;
+
+  & ul {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    & li {
+      padding: 0;
+      font-family: 'Proxima Nova', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: #444444;
+      white-space: nowrap;
+      margin-top: 7.3px;
+      &:first-child{
+        font-weight: 700;
+      }
+    }
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
+.map__list_moscow{
+  margin-left: 0;
 }

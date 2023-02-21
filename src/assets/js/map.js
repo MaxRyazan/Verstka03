@@ -9,6 +9,8 @@ const moscow = document.querySelectorAll('.moscow_point')
 const arrow = document.querySelector('.map__nav_arrow')
 const offices = document.querySelector('.map__nav_wrapper_left')
 const navigationBar = document.querySelector('.map__nav_wrapper_right')
+const map = document.querySelector('.map__earth')
+const officeList = document.querySelector('.map__list_wrapper')
 
 const locations = [...vostok, ...siberia, ...ural, ...nord_west, ...volga, ...center, ...south, ...moscow]
 
@@ -23,15 +25,15 @@ spyForMouseMoveNavigationLink()
 
 offices.addEventListener('click', () => {
     reverseArrow()
-    changeMenuOpacity()
+    changeMapOpacity()
     openOfficesList()
 })
 
+
+
 function openOfficesList(){
-
+    officeList.classList.toggle('hide')
 }
-
-
 
 function spyForClickNavigationLink(){
     for(let i = 0; i < nav.length; i++){
@@ -119,11 +121,15 @@ function reverseArrow(){
     }
 }
 
-function changeMenuOpacity(){
+function changeMapOpacity(){
     if(!navigationBar.classList.contains('menu_shadow')){
         navigationBar.classList.toggle('menu_shadow')
+        map.classList.toggle('menu_shadow')
     } else {
         navigationBar.classList.toggle('menu_shadow_remove')
+        map.classList.toggle('menu_shadow_remove')
     }
 }
+
+
 
