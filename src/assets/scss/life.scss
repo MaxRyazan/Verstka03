@@ -20,9 +20,11 @@
   background: #F0F0F0;
   border-radius: 64.2857px;
 }
+
 .btn_next{
   transform: matrix(-1, 0, 0, 1, 0, 0);
 }
+
 .btn_prev{
   right: 146px;
   & img{
@@ -42,14 +44,34 @@
   line-height: 100%;
   color: #444444;
 }
+
 .life__slider{
   width: 100%;
   overflow: hidden;
 }
+
 .life__slider_inner{
   display: flex;
   flex-wrap: nowrap;
   & img{
     width: 100%;
+  }
+}
+
+.life__pseudo{
+  margin-top: 50px;
+  display: flex;
+  width: 100%;
+  margin-bottom: 56px;
+}
+
+.life__pseudo_item{
+  height: 6px;
+  background-color: #000000;
+  opacity: 0.1;
+  margin-left: 10px;
+  transition: .75s;
+  &:first-child{
+    margin-left: 0;
   }
 }
