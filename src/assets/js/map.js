@@ -6,6 +6,9 @@ const volga = document.querySelectorAll('.volga_point')
 const center = document.querySelectorAll('.center_point')
 const south = document.querySelectorAll('.south_point')
 const moscow = document.querySelectorAll('.moscow_point')
+const arrow = document.querySelector('.map__nav_arrow')
+const offices = document.querySelector('.map__nav_wrapper_left')
+const navigationBar = document.querySelector('.map__nav_wrapper_right')
 
 const locations = [...vostok, ...siberia, ...ural, ...nord_west, ...volga, ...center, ...south, ...moscow]
 
@@ -18,11 +21,15 @@ spyForMouseMoveNavigationLink()
 
 
 
+offices.addEventListener('click', () => {
+    reverseArrow()
+    changeMenuOpacity()
+    openOfficesList()
+})
 
+function openOfficesList(){
 
-
-
-
+}
 
 
 
@@ -98,6 +105,25 @@ function showMarks(arg){
         case "Все" : showCities(locations);
             break;
 
+    }
+}
+
+function reverseArrow(){
+    if(arrow.style.transform === 'rotate(180deg)'){
+        arrow.style.transform = 'rotate(360deg)'
+        arrow.style.top = '50%'
+        arrow.style.transform = 'translate(0, -50%)'
+    } else {
+        arrow.style.transform = 'rotate(180deg)'
+        arrow.style.top = 'calc(50% - 10px)'
+    }
+}
+
+function changeMenuOpacity(){
+    if(!navigationBar.classList.contains('menu_shadow')){
+        navigationBar.classList.toggle('menu_shadow')
+    } else {
+        navigationBar.classList.toggle('menu_shadow_remove')
     }
 }
 

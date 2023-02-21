@@ -43,6 +43,7 @@
 }
 
 .map__nav_wrapper_left{
+  cursor: pointer;
   position: relative;
   & h3{
     display: inline-block;
@@ -50,11 +51,20 @@
   }
   & img {
     position: absolute;
-    cursor: pointer;
     right: -32px;
     top: 50%;
     transform: translate(0, -50%);
   }
+}
+
+.menu_shadow{
+  opacity: 0.1;
+  animation: .5s linear hide;
+}
+
+.menu_shadow_remove{
+  opacity: 1;
+  animation: .5s linear remove_shadow;
 }
 
 .map__earth {
@@ -63,6 +73,7 @@
   margin: 0 auto;
   position: relative;
 }
+
 .map__earth_item{
     position: absolute;
   &.d-vostok{
@@ -95,6 +106,7 @@
   border-radius: 50%;
   background: #444444;
   position: absolute;
+  animation: 1s linear show;
   & span {
     position: absolute;
     top: 12px;
@@ -264,5 +276,39 @@
       font-size: 11px;
       white-space: nowrap;
     }
+  }
+}
+
+@keyframes show {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: .5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes hide {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: .5;
+  }
+  100%{
+    opacity: 0.1;
+  }
+}
+@keyframes remove_shadow {
+  0%{
+    opacity: .1;
+  }
+  50%{
+    opacity: .5;
+  }
+  100%{
+    opacity: 1;
   }
 }
