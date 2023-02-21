@@ -62,6 +62,7 @@
 .business_cards_item{
   position: relative;
   overflow: hidden;
+  height: calc(100% - 3px);
   & img {
     width: 100%;
   }
