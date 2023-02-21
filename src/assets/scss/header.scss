@@ -221,91 +221,56 @@ li{
 }
 
 .header__about_item{
-  border: 1px solid red;
-  margin-bottom: 111px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  gap: 20.22%;
+  justify-content: center;
   margin-right: 185px;
   position: relative;
-  &.one{
-    justify-content: space-between;
+}
+.header__about_item-wrapper{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 111px;
+  & img{
+    width: 100%;
+  }
+  & text{
+    position: absolute;
+    top: calc(100% + 5px);
+    width: 210px;
     font-family: 'Proxima Nova Condensed', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 150%;
     color: #444444;
-    & img{
-      width: 100%;
-    }
   }
 }
 
-.one.first{
-  padding-left: 39px;
-  position: relative;
-  &::before{
-    position: absolute;
+.one{
+  & text{
+    left: -40px;
+  }
+  &::after{
     content: url(../images/header_about_before.svg);
-    left: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-  &::after{
-    content: 'на IT-рынке';
-    @include after;
-  }
-}
-
-.one.second{
-  position: relative;
-  &::after{
-    content: 'сотрудников в России';
-    @include after;
-  }
-}
-
-.one.third{
-  position: relative;
-  &::after{
-    content: 'городов России';
-    @include after;
-  }
-}
-
-.two.first{
-  position: relative;
-  margin-left: 147px;
-  &::before{
     position: absolute;
+    left: -40px;
     top: 50%;
-    transform: translate(0, -50%);
-    left: calc(100% + 10px);
-    content: url(../images/header_about_after.svg);
-  }
-  &::after{
-    content: 'разработчиков';
-    @include after;
+    transform: translate(0 -50%);
   }
 }
 
-.two.second{
-  margin-left: 244px;
-  position: relative;
-  width: 210px;
-  &::before{
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    left: calc(100% - 35px);
-    content: url(../images/header_about_after.svg);
-  }
+.four, .five{
   &::after{
-    content: "сотрудников ежегодно проходят оценку и обучение";
-    @include after;
-    white-space: normal;
-    bottom: -40px;
+    content: url(../images/header_about_after.svg);
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translate(0 -50%);
   }
 }
+
 
