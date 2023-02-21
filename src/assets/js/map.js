@@ -7,7 +7,7 @@ const center = document.querySelectorAll('.center_point')
 const south = document.querySelectorAll('.south_point')
 const moscow = document.querySelectorAll('.moscow_point')
 
-const locations = [...vostok, ...siberia, ...ural, ...nord_west, ...volga, ...center, ...south]
+const locations = [...vostok, ...siberia, ...ural, ...nord_west, ...volga, ...center, ...south, ...moscow]
 
 
 const nav = document.querySelector('.map__nav_right_links').children

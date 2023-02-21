@@ -58,7 +58,8 @@
 }
 
 .map__earth {
-  max-width: calc(100% - 30px);
+  width: 1220px;
+  height: 600px;
   margin: 0 auto;
   position: relative;
 }
@@ -86,33 +87,182 @@
     @include coordinates(1025px, 291px)
   }
 }
-.d-vostok_point{
-    display: none;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #444444;
+
+.map__earth_pointers-item {
+  display: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #444444;
+  position: absolute;
+  & span {
     position: absolute;
-    & span{
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translate(-50% 0);
-      font-family: 'Proxima Nova Condensed', sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 13px;
-      line-height: 100%;
-      text-align: right;
-      color: #444444;
+    top: 12px;
+    left: 50%;
+    transform: translate(-50% 0);
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 100%;
+    text-align: right;
+    color: #444444;
   }
-    &.vladivostok{
-      @include coordinates(210px, 574px)
-    }
-  &.khabarovsk{
-    @include coordinates(197px, 498px);
+  &.vladivostok {
+    @include coordinates(210px, 574px);
     & span{
+      font-size: 15px;
+    }
+  }
+  &.khabarovsk {
+    @include coordinates(197px, 498px);
+    & span {
       top: -20px;
+      font-size: 15px;
+    }
+  }
+  &.irkutsk {
+    @include coordinates(490px, 491px);
+  }
+  &.krasnoyarsk {
+    @include coordinates(540px, 460px);
+    & span {
+      font-size: 11px;
+    }
+  }
+  &.tomsk{
+    @include coordinates(604px, 462px);
+    & span {
+      top: -20px;
+    }
+  }
+  &.novosibirsk{
+    @include coordinates(671px, 457px);
+    & span {
+      font-size: 11px;
+    }
+  }
+  &.omsk{
+    @include coordinates(723px, 473px)
+  }
+  &.surgut{
+    @include coordinates(745px, 309px);
+    & span{
+      font-size: 11px;
+    }
+  }
+  &.tumen{
+    @include coordinates(770px, 363px)
+  }
+  &.perm{
+    @include coordinates(802px, 299px)
+  }
+  &.chelyabinsk{
+    @include coordinates(863px, 363px)
+  }
+  &.ekaterinburg{
+    @include coordinates(861px, 326px);
+    & span{
+      font-size: 11px;
+    }
+  }
+  &.ijevsk{
+    @include coordinates(853px, 288px);
+    & span{
+      font-size: 11px;
+    }
+  }
+  &.spb{
+    @include coordinates(1032px, 130px);
+    & span{
+      white-space: nowrap;
+      font-size: 12.5px;
+      top: 16px;
+    }
+  }
+  &.yaroslavl{
+    @include coordinates(1002px, 198px);
+    & span{
+      white-space: nowrap;
+      top: 12px;
+      font-size: 10px;
+    }
+  }
+  &.kaliningrad{
+    @include coordinates(1142px, 124px);
+    & span{
+      font-size: 11px;
+    }
+  }
+  &.moscow{
+    @include coordinates(1040px, 223px)
+  }
+  &.voronej{
+    @include coordinates(1086px, 245px);
+    & span{
+      font-size: 11px;
+    }
+  }
+  &.belgorod{
+    @include coordinates(1091px, 276px);
+    & span{
+      font-size: 11px;
+    }
+  }
+  &.n_novgorod{
+    @include coordinates(990px, 260px);
+    & span{
+      font-size: 11px;
+      white-space: nowrap;
+    }
+  }
+  &.samara{
+    @include coordinates(994px, 307px);
+    & span{
+      font-size: 11px;
+      white-space: nowrap;
+    }
+  }
+  &.kazan{
+    @include coordinates(932px, 299px);
+    & span{
+      font-size: 11px;
+      white-space: nowrap;
+    }
+  }
+  &.ufa{
+    @include coordinates(930px, 335px);
+    & span{
+      font-size: 11px;
+      white-space: nowrap;
+    }
+  }
+  &.orenburg{
+    @include coordinates(961px, 365px);
+    & span{
+      font-size: 11px;
+      white-space: nowrap;
+    }
+  }
+  &.rostov{
+    @include coordinates(1100px, 319px);
+    & span{
+      font-size: 11px;
+      white-space: nowrap;
+    }
+  }
+  &.volgograd{
+    @include coordinates(1073px, 358px);
+    & span{
+      font-size: 11px;
+      white-space: nowrap;
+    }
+  }
+  &.krasnodar{
+    @include coordinates(1131px, 379px);
+    & span{
+      font-size: 11px;
+      white-space: nowrap;
     }
   }
 }
