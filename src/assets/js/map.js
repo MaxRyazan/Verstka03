@@ -14,35 +14,44 @@ const officeList = document.querySelector('.map__list_wrapper')
 
 const locations = [...vostok, ...siberia, ...ural, ...nord_west, ...volga, ...center, ...south, ...moscow]
 
-
 const nav = document.querySelector('.map__nav_right_links').children
 
 spyForClickNavigationLink()
 spyForMouseMoveNavigationLink()
+showMarksFromOfficeList()
 
 
 
 
 offices.addEventListener('click', () => {
+    disabledNavButtons()
     reverseArrow()
     changeMapOpacity()
     openOfficesList()
 })
 
-
+function disabledNavButtons(){
+    for(let i = 0; i < nav.length; i++){
+        nav[i].classList.toggle('disabled')
+    }
+}
 
 function openOfficesList(){
     officeList.classList.toggle('hide')
 }
 
 function spyForClickNavigationLink(){
+    clearAllMarksOnMap()
+    preventManyMarked()
     for(let i = 0; i < nav.length; i++){
         nav[i].addEventListener('click', () => {
-            clearAllMarksOnMap()
             preventManyMarked()
-            nav[i].style.transition = '.7s linear'
-            nav[i].style.borderBottom = '3px solid rgb(163, 12, 51)'
-            showMarks(nav[i])
+            clearAllMarksOnMap()
+            if(!nav[i].classList.contains('disabled')){
+                nav[i].style.transition = '.7s linear'
+                nav[i].style.borderBottom = '3px solid rgb(163, 12, 51)'
+                showMarks(nav[i])
+            }
         })
     }
 }
@@ -50,7 +59,7 @@ function spyForClickNavigationLink(){
 function spyForMouseMoveNavigationLink(){
     for(let i = 0; i < nav.length; i++){
         nav[i].addEventListener('mouseover', () => {
-            if(nav[i].style.borderBottom === '' || nav[i].style.borderBottom === '3px solid white') {
+            if((nav[i].style.borderBottom === '' || nav[i].style.borderBottom === '3px solid white') && !nav[i].classList.contains('disabled')) {
                 nav[i].style.transition = '1s linear'
                 nav[i].style.borderBottom = '3px solid rgb(163, 12, 50)'
             }
@@ -72,7 +81,7 @@ function clearAllMarksOnMap(){
 
 function preventManyMarked(){
     for(let j = 0; j < nav.length; j++){
-        if(nav[j].style.borderBottom === '3px solid rgb(163, 12, 51)'){
+        if(nav[j].style.borderBottom === '3px solid rgb(163, 12, 51)' || nav[j].style.borderBottom === '3px solid rgb(163, 12, 50)'){
             nav[j].style.borderBottom = '3px solid white'
         }
     }
@@ -86,7 +95,6 @@ function showCities(region){
 
 function showMarks(arg){
     const param = arg.innerHTML
-
     switch (param) {
         case "Дальний восток" : showCities(vostok);
             break;
@@ -130,6 +138,26 @@ function changeMapOpacity(){
         map.classList.toggle('menu_shadow_remove')
     }
 }
+
+function showMarksFromOfficeList(){
+    const data = document.querySelector('.map__list').children
+
+    for(let i = 0; i < data.length; i++ ){
+        data[i].addEventListener('click', () => {
+            clearAllMarksOnMap()
+            spyForClickNavigationLink()
+            showMarks(data[i].children[0])
+            for(let j = 0; j < nav.length; j++){
+                nav[i+1].style.transition = '1s linear'
+                nav[i+1].style.borderBottom = '3px solid rgb(163, 12, 50)'
+            }
+            changeMapOpacity()
+            openOfficesList()
+            disabledNavButtons()
+        })
+    }
+}
+
 
 
 
