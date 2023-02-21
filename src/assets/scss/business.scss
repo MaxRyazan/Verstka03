@@ -1,0 +1,105 @@
+.business{
+  max-width: 100%;
+  & h3{
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 100%;
+    color: #444444;
+    text-align: center;
+    margin-bottom: 55px;
+  }
+}
+
+.business__mission{
+  text-align: center;
+  position: relative;
+  background: #A30C33;
+  padding: 140px 72px 140px 68px;
+  margin-top: 105px;
+  margin-bottom: 100px;
+  & h2{
+    z-index: 5;
+    margin-bottom: 40px;
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 100%;
+    color: #FFFFFF;
+  }
+  & p{
+    z-index: 5;
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #FFFFFF;
+  }
+}
+
+.business_mission_item{
+  position: absolute;
+  &.left{
+    left: 0;
+    top: 0;
+  }
+  &.right{
+    right: 0;
+    top: 0;
+  }
+}
+
+.business_cards{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(280px, 615px));
+  grid-auto-columns: minmax(280px, 615px);
+}
+
+.business_cards_item{
+  position: relative;
+  overflow: hidden;
+  & img {
+    width: 100%;
+  }
+}
+
+.business_cards_item-text{
+  left: 0;
+  position: absolute;
+  background: #2D3653;
+  opacity: 0.6;
+  top: 75%;
+  height: 100%;
+  width: 100%;
+  padding: 20px 115px 20px 20px;
+  cursor: pointer;
+  transition: .5s;
+  &:hover{
+    top: 0;
+    transition: .5s;
+  }
+  & h3{
+    opacity: 1;
+    text-align: start;
+    max-width: 360px;
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+  & p{
+    font-family: 'Proxima Nova Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: #FFFFFF;
+  }
+}

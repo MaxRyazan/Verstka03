@@ -154,6 +154,7 @@ function showMarksFromOfficeList(){
             changeMapOpacity()
             openOfficesList()
             disabledNavButtons()
+            reverseArrow()
         })
     }
 }
