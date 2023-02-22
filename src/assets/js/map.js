@@ -22,25 +22,23 @@ spyForClickNavigationLink()
 spyForMouseMoveNavigationLink()
 showMarksFromOfficeList()
 
-
 for(let i = 0; i < offices.children.length; i++){
     offices.children[i].addEventListener('click', () => {
-        disabledNavButtons()
+        toggleDisableNavButtons()
         reverseArrow()
         changeMapOpacity()
-        openOfficesList()
+        toggleOfficesList()
     })
 }
 
 
-
-function disabledNavButtons(){
+function toggleDisableNavButtons(){
     for(let i = 0; i < nav.length; i++){
         nav[i].classList.toggle('disabled')
     }
 }
 
-function openOfficesList(){
+function toggleOfficesList(){
     officeList.classList.toggle('hide')
 }
 
@@ -100,7 +98,7 @@ function showCities(region){
 function showMarks(arg){
     const param = arg.innerHTML
     switch (param) {
-        case "Дальний восток" : showCities(vostok);
+        case "Дальний Восток" : showCities(vostok);
             break;
         case "Сибирь" : showCities(siberia);
             break;
@@ -155,14 +153,12 @@ function showMarksFromOfficeList(){
                 nav[i+1].style.transition = '1s linear'
                 nav[i+1].style.borderBottom = '3px solid rgb(163, 12, 50)'
             }
+            if(container.style.clientWidth > 480){
             changeMapOpacity()
-            openOfficesList()
-            disabledNavButtons()
             reverseArrow()
+            toggleDisableNavButtons()
+            toggleOfficesList()
+            }
         })
     }
 }
-
-
-
-

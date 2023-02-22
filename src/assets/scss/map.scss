@@ -12,7 +12,9 @@
   }
   & ul {
     display: flex;
-
+    @media screen {
+      
+    }
     & li {
       list-style-type: none;
       margin-right: 30px;
@@ -379,10 +381,15 @@
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.06);
   display: flex;
   margin-top: 103px;
+  z-index: 30;
   @media (max-width: 1024px){
     padding: 30px 5px;
     flex-wrap: wrap;
     justify-content: space-evenly;
+  }
+  @media (max-width: 640px) {
+    padding: 0 3px;
+    justify-content: flex-start;
   }
   & ul {
     padding: 15px 0;
@@ -404,6 +411,18 @@
       white-space: nowrap;
       margin-top: 7.3px;
       margin-right: 0;
+      @media (max-width: 640px) {
+        font-size: 12px;
+      }
+      @media (max-width: 480px) {
+        &:first-child{
+          display: block;
+        }
+        &::after{
+          content: '1';
+          color: red;
+        }
+      }
       &:first-child{
         font-weight: 700;
       }
