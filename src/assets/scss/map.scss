@@ -12,9 +12,6 @@
   }
   & ul {
     display: flex;
-    @media screen {
-      
-    }
     & li {
       list-style-type: none;
       margin-right: 30px;
@@ -415,11 +412,22 @@
         font-size: 12px;
       }
       @media (max-width: 480px) {
+        &.active:first-child{
+          display: block;
+          &::after{
+            content: url(../images/map_arrow_little_reverse.svg);
+            position: relative;
+            left: 3px;
+            width: 8px;
+            height: 5px;
+          }
+        }
         &:first-child{
           display: block;
           &::after{
             content: url(../images/map_arrow_little.svg);
-            position: absolute;
+            position: relative;
+            left: 3px;
             width: 8px;
             height: 5px;
           }

@@ -2,6 +2,7 @@ const menuButtonsList = document.querySelector('.map__list').children
 
 window.addEventListener('resize', () => {
     watchClientWidth()
+    unMarkAll()
 })
 watchClientWidth()
 
@@ -10,7 +11,7 @@ function watchClientWidth(){
     if(window.innerWidth <= 480){
         for(let i = 0; i < menuButtonsList.length; i++){
             hideMenu(menuButtonsList[i])
-            menuButtonsList[i].style.width = 'calc(30% - 30px)'
+            menuButtonsList[i].style.width = 'calc(30% - 15px)'
         }
         for (let i = 0; i < menuButtonsList.length; i++) {
             menuButtonsList[i].children[0].addEventListener('click', () => {
@@ -54,9 +55,15 @@ function closeAllMenu(){
 }
 
 function markMenuBuRedColor(arg){
-    for(let i = 0; i < menuButtonsList.length; i++){
-        menuButtonsList[i].children[0].style.color = '#444444'
-    }
+    unMarkAll()
     const list = arg.children
     list[0].style.color = '#B01736';
+    list[0].classList.add('active')
+}
+
+function unMarkAll(){
+    for(let i = 0; i < menuButtonsList.length; i++){
+        menuButtonsList[i].children[0].style.color = '#444444'
+        menuButtonsList[i].children[0].classList.remove('active')
+    }
 }
