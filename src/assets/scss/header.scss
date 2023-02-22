@@ -180,7 +180,14 @@ li{
   margin: 100px auto;
   background: #FFFFFF;
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.08);
-
+  @media (max-width: 640px) {
+    padding: 30px 5px;
+  }
+  @media (max-width: 480px){
+    margin: 60px auto;
+    padding: 24px 5px;
+    font-size: 9px;
+  }
   & p{
     font-family: 'Proxima Nova Condensed', sans-serif;
     font-style: normal;
@@ -199,16 +206,8 @@ li{
       font-size: 16px;
     }
     @media (max-width: 320px) {
-      font-size: 10px;
+      font-size: 14px;
     }
-  }
-  @media (max-width: 640px) {
-    padding: 30px 5px;
-  }
-  @media (max-width: 480px){
-    margin: 60px auto;
-    padding: 24px 5px;
-    font-size: 9px;
   }
   & span{
     color: #B01736;
@@ -218,6 +217,9 @@ li{
 .header__about {
   max-width: 890px;
   margin: 0 auto 100px;
+  @media (max-width: 640px) {
+    margin: 0 auto 50px;
+  }
 }
 
 .header__about_item{
@@ -228,31 +230,106 @@ li{
   justify-content: center;
   margin-right: 185px;
   position: relative;
+  @media (max-width: 1024px) {
+    gap: 15%;
+  }
+  @media (max-width: 640px) {
+    padding: 0 45px;
+  }
+  @media (max-width: 480px) {
+    padding: 0 5px;
+    gap: 100px;
+  }
+  @media (max-width: 430px) {
+    padding: 0 5px;
+    gap: 70px;
+  }
+  @media (max-width: 395px) {
+    padding: 0 5px;
+    gap: 60px;
+  }
+  @media (max-width: 360px) {
+    padding: 0 5px;
+    gap: 55px;
+  }
+  @media (max-width: 320px) {
+    padding: 0 5px;
+    gap: 40px;
+  }
 }
 .header__about_item-wrapper{
   display: flex;
   flex-direction: column;
   position: relative;
   margin-bottom: 111px;
+  @media (max-width: 1024px) {
+    margin-bottom: 50px;
+  }
+  @media (max-width: 640px) {
+    margin-bottom: 70px;
+  }
+  @media (max-width: 480px) {
+    margin-bottom: 0;
+    max-width: 120px;
+    &:last-child{
+      margin-bottom: 30px;
+    }
+  }
+  @media (max-width: 320px) {
+    margin-bottom: 52px;
+    max-width: 100px;
+  }
   & img{
     width: 100%;
+    @media (max-width: 1024px) {
+      height: 55px;
+    }
+    @media (max-width: 800px) {
+      height: 45px;
+    }
+    @media (max-width: 480px) {
+      height: 37px;
+    }
+    @media (max-width: 360px) {
+      height: 32px;
+    }
   }
-  & text{
+  & text, span{
     position: absolute;
     top: calc(100% + 5px);
-    width: 210px;
     font-family: 'Proxima Nova Condensed', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
     color: #444444;
+    white-space: nowrap;
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+    @media (max-width: 320px) {
+      text-align: center;
+      white-space: nowrap;
+      left: -20%;
+    }
+  }
+  & span{
+    top: calc(100% + 25px);
   }
 }
 
 .one{
+  @media (max-width: 360px) {
+    left: 10px;
+  }
   & text{
     left: -40px;
+    @media (max-width: 480px) {
+      left: -25px;
+    }
+    @media (max-width: 360px) {
+      left: 10px;
+    }
   }
   &::after{
     content: url(../images/header_about_before.svg);
@@ -260,17 +337,70 @@ li{
     left: -40px;
     top: 50%;
     transform: translate(0 -50%);
+    @media (max-width: 480px) {
+      transform: scale(0.75);
+      top: 5%;
+      left: -30px;
+    }
   }
 }
 
-.four, .five{
-  &::after{
+.two{
+  & text{
+    @media (max-width: 360px) {
+      left: -20px;
+    }
+  }
+}
+
+.three {
+  & text {
+    left: 0;
+    @media (max-width: 480px) {
+      left: -20px;
+    }
+  }
+}
+
+.four text {
+  left: 0;
+  @media (max-width: 320px) {
+    right: -20px;
+  }
+}
+
+.five {
+  & text {
+    left: 0;
+    @media (max-width: 640px) {
+      left: -10px;
+    }
+    @media (max-width: 320px) {
+      right: -40px;
+    }
+  }
+  & span {
+    @media (max-width: 640px) {
+      left: -10px;
+    }
+  }
+}
+
+.four, .five {
+  &::after {
     content: url(../images/header_about_after.svg);
     position: absolute;
     right: -35px;
     top: 50%;
     transform: translate(0 -50%);
+    @media (max-width: 480px) {
+      transform: scale(0.75);
+      top: 5%;
+      right: -30px;
+    }
   }
+
 }
+
 
 
