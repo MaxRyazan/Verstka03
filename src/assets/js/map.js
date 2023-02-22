@@ -11,6 +11,8 @@ const offices = document.querySelector('.map__nav_wrapper_left')
 const navigationBar = document.querySelector('.map__nav_wrapper_right')
 const map = document.querySelector('.map__earth')
 const officeList = document.querySelector('.map__list_wrapper')
+const container = document.querySelector('.container')
+const map_container = document.querySelector('.map')
 
 const locations = [...vostok, ...siberia, ...ural, ...nord_west, ...volga, ...center, ...south, ...moscow]
 
@@ -19,7 +21,6 @@ const nav = document.querySelector('.map__nav_right_links').children
 spyForClickNavigationLink()
 spyForMouseMoveNavigationLink()
 showMarksFromOfficeList()
-
 
 
 
