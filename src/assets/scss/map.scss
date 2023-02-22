@@ -417,10 +417,12 @@
       @media (max-width: 480px) {
         &:first-child{
           display: block;
-        }
-        &::after{
-          content: '1';
-          color: red;
+          &::after{
+            content: url(../images/map_arrow_little.svg);
+            position: absolute;
+            width: 8px;
+            height: 5px;
+          }
         }
       }
       &:first-child{
@@ -428,4 +430,8 @@
       }
     }
   }
+}
+
+.mark{
+    color: #B01736;
 }

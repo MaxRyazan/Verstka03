@@ -11,8 +11,6 @@ const offices = document.querySelector('.map__nav_wrapper_left')
 const navigationBar = document.querySelector('.map__nav_wrapper_right')
 const map = document.querySelector('.map__earth')
 const officeList = document.querySelector('.map__list_wrapper')
-const container = document.querySelector('.container')
-const map_container = document.querySelector('.map')
 
 const locations = [...vostok, ...siberia, ...ural, ...nord_west, ...volga, ...center, ...south, ...moscow]
 
@@ -153,7 +151,7 @@ function showMarksFromOfficeList(){
                 nav[i+1].style.transition = '1s linear'
                 nav[i+1].style.borderBottom = '3px solid rgb(163, 12, 50)'
             }
-            if(container.style.clientWidth > 480){
+            if(window.innerWidth > 480){
             changeMapOpacity()
             reverseArrow()
             toggleDisableNavButtons()
