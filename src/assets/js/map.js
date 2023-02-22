@@ -23,13 +23,16 @@ spyForMouseMoveNavigationLink()
 showMarksFromOfficeList()
 
 
+for(let i = 0; i < offices.children.length; i++){
+    offices.children[i].addEventListener('click', () => {
+        disabledNavButtons()
+        reverseArrow()
+        changeMapOpacity()
+        openOfficesList()
+    })
+}
 
-offices.addEventListener('click', () => {
-    disabledNavButtons()
-    reverseArrow()
-    changeMapOpacity()
-    openOfficesList()
-})
+
 
 function disabledNavButtons(){
     for(let i = 0; i < nav.length; i++){

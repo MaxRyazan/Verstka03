@@ -3,9 +3,6 @@
   top:  $top;
 }
 
-li {
-  cursor: pointer !important;
-}
 .map{
   width: 100%;
   position: relative;
@@ -29,6 +26,9 @@ li {
       cursor: pointer;
       border-bottom: 3px solid white;
       white-space: nowrap;
+      @media (max-width: 1024px) {
+        margin-right: 20px;
+      }
       &:last-child{
         margin-right: 0;
       }
@@ -44,25 +44,35 @@ li {
   margin: 0 auto 90px;
   background: #FFFFFF;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
+  @media (max-width: 1024px) {
+    padding: 0 5px;
+  }
 }
 
 .map__nav_wrapper{
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: 1154px){
+    flex-wrap: wrap;
+  }
 }
 .map__nav_wrapper_right{
   width: 100%;
 }
 .map__nav_wrapper_left{
-  cursor: pointer;
   position: relative;
   width: 100%;
   & h3{
-    display: inline-block;
+    cursor: pointer;
     padding: 28px 0;
+    display: inline-block;
+    @media (max-width: 1154px) {
+      padding: 10px 0;
+    }
   }
   & img {
+    cursor: pointer;
     position: absolute;
     left: 140px;
     top: 50%;
@@ -113,6 +123,7 @@ li {
   display: none;
 }
 
+
 .map__earth_pointers{
   position: absolute;
   right: 0;
@@ -127,7 +138,7 @@ li {
 }
 
 .map__earth_item{
-    position: absolute;
+  position: absolute;
   &.d-vostok{
     @include coordinates(0, 0)
   }
@@ -362,17 +373,26 @@ li {
 
 .map__list {
   position: absolute;
-  padding: 30px 68.5px;
+  padding: 15px 68.5px;
   max-width: 1250px;
   background: #FFFFFF;
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.06);
   display: flex;
   margin-top: 103px;
-
+  @media (max-width: 1024px){
+    padding: 30px 5px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
   & ul {
-    margin-left: 30px;
+    padding: 15px 0;
+    margin-right: 24px;
     display: flex;
     flex-direction: column;
+    &:last-child{
+      margin-right: 0;
+    }
+
     & li {
       padding: 0;
       font-family: 'Proxima Nova Condensed', sans-serif;
@@ -383,15 +403,10 @@ li {
       color: #444444;
       white-space: nowrap;
       margin-top: 7.3px;
+      margin-right: 0;
       &:first-child{
         font-weight: 700;
       }
     }
-    &:first-child{
-      margin-left: 0;
-    }
   }
-}
-.map__list_moscow{
-  margin-left: 0;
 }
