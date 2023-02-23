@@ -1,34 +1,45 @@
+
+hr{
+  width: calc(100% - 40px);
+  margin: 120px auto 70px;
+  @media (max-width: 1250px) {
+    margin-bottom: calc(24px + (70 - 24) * ((100vw - 320px) / (1250 - 320)));
+    margin-top: calc(52px + (120 - 52) * ((100vw - 320px) / (1250 - 320)));
+  }
+}
+
 .bonus{
   max-width: 1110px;
   padding: 80px 110px;
   display: flex;
   flex-direction: column;
-  gap: 190px;
   background: #FFFFFF;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
   margin: 100px auto;
+  @media (max-width: 1250px) {
+    padding:
+          calc(24px + (110 - 24) * ((100vw - 320px) / (1250 - 320)))
+          calc(5px + (80 - 5) * ((100vw - 320px) / (1250 - 320)));
+  }
 }
 
 .bonus__item_icons{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   &.up{
-    & div{
-      margin-left: 85px;
-      &:first-child{
-        margin-left: 0;
-      }
+    gap: 80px;
+    margin-bottom: 50px;
+    @media (max-width: 1250px) {
+      margin-top: calc(40px + (50 - 40) * ((100vw - 320px) / (1250 - 320)));
     }
   }
   &.down{
     margin-top: 50px;
-    & div{
-      margin-left: 80px;
-      &:first-child{
-        margin-left: 0;
-      }
+    @media (max-width: 1250px) {
+      margin-top: calc(25px + (50 - 25) * ((100vw - 320px) / (1250 - 320)));
     }
+    gap: 85px;
   }
 }
 
@@ -42,6 +53,9 @@
     line-height: 120%;
     text-align: center;
     color: #B01736;
+    @media (max-width: 1250px) {
+      font-size: calc(21px + (40 - 21) * ((100vw - 320px) / (1250 - 320)));
+    }
   }
   & h1{
     font-family: 'Proxima Nova Condensed', sans-serif;
@@ -51,7 +65,10 @@
     line-height: 100%;
     text-align: center;
     color: #444444;
-    margin-bottom: 50px;
+    white-space: nowrap;
+    @media (max-width: 1250px) {
+      font-size: calc(24px + (56 - 24) * ((100vw - 320px) / (1250 - 320)));
+    }
   }
   & h2{
     font-family: 'Proxima Nova Condensed', sans-serif;
@@ -61,11 +78,21 @@
     line-height: 120%;
     text-align: center;
     color: #444444;
+    @media (max-width: 1250px) {
+      font-size: calc(21px + (40 - 21) * ((100vw - 320px) / (1250 - 320)));
+    }
   }
 }
 
 .bonus__item_icons-el{
   position: relative;
+  width: 110px;
+  & img{
+    width: 100%;
+  }
+  @media (max-width: 1250px) {
+    width: calc(80px + (110 - 80) * ((100vw - 320px) / (1250 - 320)));
+  }
   &::after{
     position: absolute;
     bottom: -25px;
@@ -78,6 +105,12 @@
     color: #444444;
     line-height: 110%;
     white-space: nowrap;
+    @media (max-width: 640px){
+      font-size: 16px;
+    }
+    @media (max-width: 480px){
+      font-size: 14px;
+    }
   }
   &::before{
     position: absolute;
@@ -91,6 +124,12 @@
     font-size: 18px;
     color: #444444;
     line-height: 110%;
+    @media (max-width: 640px){
+      font-size: 16px;
+    }
+    @media (max-width: 480px){
+      font-size: 14px;
+    }
   }
   &.dms::after{
     content: 'Дмс';
@@ -115,9 +154,15 @@
   &.sport{
     &::after{
       content: 'Корпоративные скидки';
+      @media (max-width: 800px){
+        content: 'Корпоративные';
+      }
     }
     &::before{
       content: 'на спорт';
+      @media (max-width: 800px){
+        content: 'скидки на спорт';
+      }
     }
   }
   &.lti{
