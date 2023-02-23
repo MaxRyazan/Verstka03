@@ -30,6 +30,7 @@ hr{
   &.up{
     gap: 80px;
     margin-bottom: 50px;
+    margin-top: 50px;
     @media (max-width: 1250px) {
       margin-top: calc(40px + (50 - 40) * ((100vw - 320px) / (1250 - 320)));
     }
