@@ -64,7 +64,7 @@
     width: 28%;
     left: -50px;
     top: 50%;
-    transform: translate(0 -50%);
+    transform: translate(0, -50%);
     @media (max-width: 1250px) {
       left:  calc(-20px + (32 - 16) * ((100vw - 320px) / (1250 - 320)));
     }
@@ -82,7 +82,7 @@
     width: 28%;
     right: -50px;
     top: 50%;
-    transform: translate(0 -50%);
+    transform: translate(0, -50%);
     @media (max-width: 1250px) {
       right:  calc(-20px + (-50 + 20) * ((100vw - 320px) / (1250 - 320)));
     }
@@ -111,7 +111,7 @@
   }
   @media (max-width: 479.79px) {
     margin-left: 50%;
-    transform: translate(-50% 0);
+    transform: translate(-50%, 0);
   }
   @media (max-width: 320px) {
     gap: 10px;

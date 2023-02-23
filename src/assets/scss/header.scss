@@ -337,7 +337,7 @@ li{
     position: absolute;
     left: -40px;
     top: 50%;
-    transform: translate(0 -50%);
+    transform: translate(0, -50%);
     @media (max-width: 480px) {
       transform: scale(0.75);
       top: 5%;
@@ -393,7 +393,7 @@ li{
     position: absolute;
     right: -35px;
     top: 50%;
-    transform: translate(0 -50%);
+    transform: translate(0, -50%);
     @media (max-width: 480px) {
       transform: scale(0.75);
       top: 5%;
