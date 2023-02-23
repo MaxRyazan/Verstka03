@@ -2,6 +2,11 @@
   max-width: 1250px;
   padding: 0 70px;
   position: relative;
+  @media (max-width: 1250px) {
+    padding:
+            0
+            calc(20px + (70 - 20) * ((100vw - 320px) / (1250 - 320)));
+  }
   & button{
     position: absolute;
     width: 56px;
@@ -19,6 +24,9 @@
   top: 0;
   background: #F0F0F0;
   border-radius: 64.2857px;
+  @media (max-width: 639.79px) {
+    display: none;
+  }
 }
 
 .btn_next{
@@ -43,6 +51,10 @@
   font-size: 56px;
   line-height: 100%;
   color: #444444;
+  white-space: nowrap;
+  @media (max-width: 1250px) {
+    font-size: calc(24px + (56 - 24) * ((100vw - 320px) / (1250 - 320)));
+  }
 }
 
 .life__slider{

@@ -12,14 +12,27 @@ const second = document.querySelector('.life__pseudo_item.second')
 const third = document.querySelector('.life__pseudo_item.third')
 const fourth = document.querySelector('.life__pseudo_item.fourth')
 
+const interval = setInterval(component, 3000);
+
+
 window.addEventListener('resize', () => {
+    console.log(window.innerWidth)
     createPseudo()
+    activateSlider()
     sliderWidth = document.querySelector('.life__slider').clientWidth
 })
+
+
+activateSlider()
 createPseudo()
 buttonsLogic()
 watch()
 
+function activateSlider(){
+    if(window. innerWidth >= 640){
+        clearInterval(interval)
+    }
+}
 
 function createPseudo(){
     for(let i = 0; i < pseudo.length; i++){
@@ -29,18 +42,22 @@ function createPseudo(){
     }
 }
 
+function component() {
+    if (count >= maxCount - 1) {
+        count = -1
+    }
+    count++;
+    blockToMove.style.transform = 'translate(-' + count * sliderWidth + 'px, 0)';
+    watch()
+    blockToMove.style.transition = '.7s';
+    if (count >= maxCount - 1) {
+        count = -1
+    }
+}
+
 function buttonsLogic(){
     buttonNext.addEventListener('click', () => {
-        if (count >= maxCount - 1) {
-            count = -1
-        }
-        count++;
-        blockToMove.style.transform = 'translate(-' + count * sliderWidth + 'px, 0)';
-        watch()
-        blockToMove.style.transition = '.7s';
-        if (count >= maxCount - 1) {
-            count = -1
-        }
+    component()
     })
     buttonPrev.addEventListener('click', () => {
         if (count === -1) {
