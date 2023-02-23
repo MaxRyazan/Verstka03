@@ -1,10 +1,17 @@
 const menuButtonsList = document.querySelector('.map__list').children
+const nav_block = document.querySelector('.map__nav')
+const map_block = document.querySelector('.map__earth')
+
+
+
 
 window.addEventListener('resize', () => {
     watchClientWidth()
+    watchNavBlockWidth()
     unMarkAll()
 })
 watchClientWidth()
+watchNavBlockWidth()
 
 
 function watchClientWidth(){
@@ -66,4 +73,8 @@ function unMarkAll(){
         menuButtonsList[i].children[0].style.color = '#444444'
         menuButtonsList[i].children[0].classList.remove('active')
     }
+}
+
+function watchNavBlockWidth(){
+    nav_block.style.width = map_block.clientWidth  + 'px'
 }
